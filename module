@@ -1,0 +1,338 @@
+# Login Administrasi
+ 
+admin = 'admin'
+password_admin = 'admin'
+
+# List Menu
+
+list_pesanan = {}
+ 
+menu_makan =[["Nasi Goreng" , 13000],
+            ["Mie Goreng"   , 13000],
+            ["Bakso"        , 10000]]
+
+menu_minum =[["Es Teh"      , 5000],
+            ["Kopi Aren"    , 7000],
+            ["Teh Tarik"    , 6000]]
+
+# Fungsi-Fungsi Menu
+
+def tambah():
+    print()
+    print (20*"=")
+    print (1*"|", "Tambah Data Menu", 1*"|")
+    print (20*"=")
+    print ("[1] Makanan \n[2] Minuman")
+    x = input('Masukkan Menu [1 atau 2] : ')
+    if x == '1':
+        print()
+        print (12*"-", "Pilih Posisi", 12*"-")
+        print ("[1] Tengah \n[2] Belakang")
+        x = input('Masukkan Menu [1 atau 2] : ')
+
+        if x == '1':
+            print()
+            print ("====================")
+            print ("|  Tambahkan Data  |")
+            print ("====================")
+
+            for data, nilai in menu_makan :
+                print(data,'\t >>', nilai)
+            print()
+            urut = int(input("Masukkan Nomor Posisi (Dimulai dari angka 0) = "))
+            index = urut - 1
+            nama = (input("Masukkan Nama Menu Baru = "))
+            harga = int(input("Masukkan Harga          = "))
+            menu_makan.insert(index, [nama, harga])
+            print("====================")
+            print("| Data Ditambahkan |")
+            print("====================")
+
+        elif x == '2':
+            print()
+            print ("====================")
+            print ("|  Tambahkan Data  |")
+            print ("====================")
+
+            for data, nilai in menu_makan :
+                print(data,'\t >>', nilai)
+            print()
+            nama = (input("Masukkan Nama Menu Baru = "))
+            harga = int(input("Masukkan Harga          = "))
+            menu_makan.append([nama , harga])
+            print("====================")
+            print("| Data Ditambahkan |")
+            print("====================")
+
+        else:
+            print()
+            print("========Salah Masukkan Angka========")
+            print("Silahkan Masukkan Angka Dengan Benar")
+
+    elif x == '2':
+        print()
+        print ("===Pilih Posisi===")
+        print ("[1] Tengah \n[2] Belakang")
+        x = input('Masukkan Menu [1 atau 2] : ')
+
+        if x == '1':
+            print()
+            print ("====================")
+            print ("|  Tambahkan Data  |")
+            print ("====================")
+
+            for data, nilai in menu_minum :
+                print(data,'\t >>', nilai)
+            print()
+            urut = int(input("Masukkan Nomor Posisi (Dimulai dari angka 0) = "))
+            index = urut - 1
+            nama = (input("Masukkan Nama Menu Baru = "))
+            harga = int(input("Masukkan Harga          = "))
+            menu_minum.insert(index, [nama, harga])
+            print("====================")
+            print("| Data Ditambahkan |")
+            print("====================")
+
+        elif x == '2':
+            print()
+            print ("====================")
+            print ("|  Tambahkan Data  |")
+            print ("====================")
+
+            for data, nilai in menu_minum :
+                print(data,'\t >>', nilai)
+            print()
+            nama = (input("Masukkan Nama Menu Baru = "))
+            harga = int(input("Masukkan Harga          = "))
+            menu_minum.append([nama , harga])
+            print("====================")
+            print("| Data Ditambahkan |")
+            print("====================")
+
+        else:
+            print()
+            print("========Salah Masukkan Angka========")
+            print("Silahkan Masukkan Angka Dengan Benar")
+
+    else:
+            print()
+            print("========Salah Masukkan Angka========")
+            print("Silahkan Masukkan Angka Dengan Benar")
+
+
+def hapus():
+    print()
+    print ("===================")
+    print ("| Hapus Data Menu |")
+    print ("===================")
+    print ("[1] Makanan \n[2] Minuman")
+    x = input('Masukkan Menu [1 atau 2] : ')
+    if x == '1':
+        print()
+        print ("===Pilih Metode===")
+        print ("[1] Hapus List Yang Dipilih \n[2] Hapus List Terbawah")
+        x = input('Masukkan Menu [1 atau 2] : ')
+
+        if x == '1':
+            print()
+            print ("=======================")
+            print ("| Silahkan Hapus Data |")
+            print ("=======================")
+
+            for data, nilai in menu_makan :
+                print(data,'\t >>', nilai)
+            print()
+            indeks = (int(input("Masukkan Nomor List Menu Yang Ingin Dihapus (Dimulai dari 0) = ")))
+            index = indeks = -1
+            del menu_makan[indeks]
+            print ("=================")
+            print ("| Data Di Hapus |")
+            print ("=================")
+        
+        elif x == '2':
+            print()
+            menu_makan.pop()
+            print ("=========================")
+            print ("| Data Terbaru Di Hapus |")
+            print ("=========================")
+
+        else:
+            print()
+            print("========Salah Masukkan Angka========")
+            print("Silahkan Masukkan Angka Dengan Benar")
+
+    elif x == '2':
+        print()
+        print ("===Pilih Metode===")
+        print ("[1] Hapus List Yang Dipilih \n[2] Hapus List Terbaru")
+        x = input('Masukkan Menu [1 atau 2] : ')
+
+        if x == '1':
+            print()
+            print ("=======================")
+            print ("| Silahkan Hapus Data |")
+            print ("=======================")
+
+            for data, nilai in menu_minum :
+                print(data,'\t >>', nilai)
+            print()
+            indeks = (int(input("Masukkan Nomor List Menu Yang Ingin Dihapus (Dimulai dari 0) = ")))
+            index = indeks - 1
+            del menu_minum[indeks]
+            print ("=================")
+            print ("| Data Di Hapus |")
+            print ("=================")
+
+        elif x == '2':
+            print()
+            menu_minum.pop()
+            print ("=========================")
+            print ("| Data Terbaru Di Hapus |")
+            print ("=========================")
+
+        else:
+            print()
+            print("========Salah Masukkan Angka========")
+            print("Silahkan Masukkan Angka Dengan Benar")
+    
+    else:
+        print()
+        print("========Salah Masukkan Angka========")
+        print("Silahkan Masukkan Angka Dengan Benar")
+
+def edit():
+    print()
+    print ("==================")
+    print ("| Ubah Data Menu |")
+    print ("==================")
+    print ("[1] Makanan \n[2] Minuman")
+    x = input('Masukkan Menu [1 atau 2] : ')
+
+    if x == '1':
+        print()
+        print ("======================")
+        print ("| Silahkan Ubah Data |")
+        print ("======================")
+
+        for data, nilai in menu_makan :
+            print(data,'\t >>', nilai)
+        print()
+        pilih = int(input("Masukkan Nomor Urut Yang Ingin Diubah (Dimulai dari angka 0) = "))
+        index = pilih - 1
+        nama = input("Masukkan Nama Baru  = ")
+        harga = int(input("Masukkan Harga Baru = "))
+        menu_makan[pilih] = [nama , harga]
+        print ("================")
+        print ("| Data Di Ubah |")
+        print ("================")
+    elif x == '2':
+        print()
+        print ("======================")
+        print ("| Silahkan Ubah Data |")
+        print ("======================")
+
+        for data, nilai in menu_minum :
+            print(data,'\t >>', nilai)
+        print()
+        pilih = int(input("Masukkan Nomor Urut Yang Ingin Diubah (Dimulai dari angka 0) = "))
+        index = pilih - 1
+        nama = input("Masukkan Nama Baru  = ")
+        harga = int(input("Masukkan Harga Baru = "))
+        menu_minum[pilih] = [nama , harga]
+        print ("================")
+        print ("| Data Di Ubah |")
+        print ("================")
+    
+    else:
+        print()
+        print("========Salah Masukkan Angka========")
+        print("Silahkan Masukkan Angka Dengan Benar")
+
+def tampilkan():
+    print()
+    print ("=============")
+    print ("| Data Menu |")
+    print ("=============")
+    print ("[1] Makanan \n[2] Minuman")
+    x = input('Masukkan Menu [1 atau 2] : ')
+
+    if x == '1':
+        print()
+        print ("================")
+        print ("| Menu Makanan |")
+        print ("================")
+
+        for data, nilai in menu_makan :
+            print(data,'\t >>', nilai)
+    
+    elif x == '2':
+        print()
+        print ("================")
+        print ("| Menu Minuman |")
+        print ("================")
+
+        for data, nilai in menu_minum :
+            print(data,'\t >>', nilai)
+    
+    else:
+        print()
+        print("========Salah Masukkan Angka========")
+        print("Silahkan Masukkan Angka Dengan Benar")
+
+def edit_menu() :
+    while True :
+        print()
+        print ("========================")
+        print ("| Selamat Datang Admin |")
+        print ("========================")
+        print ("|  DATABASE MENU CAFE  |")
+        print ("========================")
+        print ("[1] Tambah Data Menu \n[2] Lihat Data \n[3] Ubah Data Menu \n[4] Hapus Data Menu \n[0] Exit")
+        x = input('Masukkan Menu [1,2,3,4,0] : ')
+        if x == '1' :
+            tambah()
+        elif x == '2' :
+            tampilkan()
+        elif x == '3' :
+            edit()
+        elif x == '4' :
+            hapus()
+        elif x == '0' :
+            print ("=============")
+            print ("| Bye Admin |")
+            print ("=============")
+            break
+        else :
+            print()
+            print("========Salah Masukkan Angka========")
+            print("Silahkan Masukkan Angka Dengan Benar")
+
+# Program Utama
+
+while True :
+    print()
+    print ("==================")
+    print ("| Selamat Datang |")
+    print ("==================")
+    print ("| Silahkan Login |")
+    print ("==================")
+    print ("[1] Login \n[0] Exit")
+    x = input('Masukkan Menu [1 atau 0] : ')
+    if x == '1' :
+        user = (input("Masukkan Username = "))
+        pw   = (input("Masukkan Password = "))
+        if user == admin and pw == password_admin :
+            edit_menu()
+        else:
+            print ("================================")
+            print ("| Username atau Password Salah |")
+            print ("================================")
+    elif x == '0' :
+        print()
+        print ("===Keluar Dari Program===")
+        print()
+        break
+    else:
+        print()
+        print("========Salah Masukkan Angka========")
+        print("Silahkan Masukkan Angka Dengan Benar")
